@@ -185,6 +185,10 @@ Aenea Dictation Client (optional)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Also available is a dictation capture client @poppe1219 wrote. This is simply a window that captures all keystrokes typed into it an relays them to the Linux host. If you disable Dragon's dictation box, you can dictate in Dragon's normal mode with the capture client in the foreground in Windows. Dragon will then type into the client, which will send the keystrokes to the server. You can still use grammars with the client in the foreground. To use, just copy ``client/aenea_client.py`` to ``MacroSystem`` and run it. By default, all grammars will only work when the client is in the foreground. You can change this behavior in ``aenea.json`` by setting ``restrict_proxy_to_aenea_client`` to ``false``.
 
+Fix VM audio shift and latencies 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Using virtualbox with pulseaudio can lead to a gradual audio shift between the host input and the received audio in the virtual machine. This can be mitigated by either switching to alsa-audio or creating a direct pass through for your audio device. If you are using a usb-audio-device on a Linux host  you will need to install the virtual box host extensions  and execute ``sudo adduser $USER vboxusers``. This will alow you to simply pass through your USB device through the user interface.
+
 Snapshot and backup (MANDATORY)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
